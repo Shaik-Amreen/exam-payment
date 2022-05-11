@@ -1,0 +1,28 @@
+
+.layout{
+    height: 100%;
+    background-color: black;
+    padding:4%
+}
+.card{
+    padding:2%;
+    height: 90vh;
+   }
+.card a{
+    text-decoration: none;
+    color: teal;
+    font-size: 15px;
+    font-weight: 500;
+}
+.card a:hover{
+    text-decoration: underline;
+    color: grey;
+    cursor: pointer;
+}
+span{
+    color: crimson;
+    font-weight: 500;
+}
+span:hover{
+    color: indianred;
+}

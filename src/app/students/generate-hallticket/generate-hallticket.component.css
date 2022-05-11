@@ -1,0 +1,53 @@
+.box{
+  display: flex;
+  height:10vh;
+}
+
+.flex-container {
+  align-items: center;
+  margin: 2%;
+  width:567px;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+.flex-child {
+  width:100%;
+ text-align: center;
+}  
+.data{
+  font-size: 9px;
+}
+.image{
+  padding:1%;
+}
+.details{
+  font-size:10px;
+}
+.photo{
+  padding-top: 0%;
+}
+.bor td,th{
+  border: 0.1px solid grey;
+}
+span{
+  padding: 1%;
+ float: right;
+ padding-bottom: 0%;
+ border: 1px solid black;
+}
+.danger{
+  text-align: center;
+  color: crimson;
+  font-weight: 500;
+}
+.download{
+  background: black;
+  color: white;
+  border-radius: 0px;
+  border-bottom-right-radius: 30px;
+}
+button:hover{
+  background:lightslategray;
+  color: white;
+  font-weight: 500;
+}

@@ -1,0 +1,12 @@
+<div class="layout">
+    <div class="card">
+        Regular Examinations<br><br>
+        <div *ngFor="let d of regdata; index as i">
+            <a (click)="applyForExam(d , 'regular')"><span>Enrollment Deadline -  {{regenddate[i] | date}}</span> - {{d | uppercase}}</a>
+        </div><br><br>
+        Supply Examinations<br><br>
+        <div *ngFor="let d of supdata;index as i">
+            <a (click)="applyForSupplyExam(d ,'supply')"><span>Enrollment Deadline -  {{supenddate[i] | date}}</span> - {{d | uppercase}}</a>
+        </div>
+    </div>
+</div>

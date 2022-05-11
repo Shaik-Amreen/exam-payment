@@ -1,0 +1,47 @@
+<div class="layout">
+    <div>
+    <div class="backform table-responsive">
+        <div *ngIf="paymode else apply"><app-payment-gateway [appdata]="applicationForm"></app-payment-gateway></div>
+   <ng-template #apply>
+        <form [formGroup]="applicationForm">
+        <label>Name</label><br>
+        <input formControlName="name" type="text"><br><br>
+        <label>Roll number</label><br>
+        <input  formControlName="rollno" type="text" [attr.disabled]=true><br><br>
+        <label>Mail Id</label><br>
+        <input formControlName="mail" type="text" [attr.disabled]=true><br><br>
+        <label>Course</label><br>
+        <input formControlName="coursename" [attr.disabled]=true type="text"><br><br>
+        <label>Year</label><br>
+        <input formControlName="year" [attr.disabled]=true type="text"><br><br>
+        <label>Semester</label><br>
+        <input formControlName="sem" [attr.disabled]=true type="text"><br><br>
+        <label>Department</label><br>
+        <input formControlName="departmentname" [attr.disabled]=true type="text"><br><br>
+        <label>Aadhar number</label><br>
+        <input formControlName="aadharnumber" [attr.disabled]=true type="text"><br><br>
+        <label>Section</label><br>
+        <input formControlName="section"  type="text"><br><br>
+        
+        <label>Subjects</label><br><br>
+        <div>            
+            <div  formArrayName="subjects">
+                <div  *ngFor="let subs of controls; index as i">
+                  <div  [formGroupName]="i">
+          <li> <label>{{applicationForm.controls["subjects"].value[i].subjectname}} &nbsp;&nbsp;&nbsp;{{applicationForm.controls["subjects"].value[i].subjectcode}}</label></li>
+           </div>
+        </div>
+        </div> 
+        </div>
+        <br><br>
+        <label>Amount</label>&nbsp;&nbsp;
+         {{amount}}<br><br>
+         <button class="btn btn-light"
+         (click)="payamount()">Apply
+       </button><br><br>
+        <button class="btn btn-danger" routerLink="/student">Close</button>
+    </form>
+</ng-template>
+</div>
+</div>
+</div>

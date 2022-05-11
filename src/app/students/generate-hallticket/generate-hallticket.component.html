@@ -1,0 +1,68 @@
+
+<div *ngIf="emptymode">
+<button  type="button"class="btn download" (click)="downloadPDF()">Download Hall ticket</button><br>
+<div  id="hallticket" #hallticket >
+    <div class="flex-container">
+    <div class="box">
+        <div class="image">
+            <img src="assets/img/customer_logo.jpg" alt="" width="70" height="70" class="d-inline-block align-text-top">
+        </div>
+        <div class="flex-child"><br>
+            MADANAPALLE INSTITUE OF TECHNOLOGY & SCIENCE , MADANAPALLE
+            <div class="data">
+                UGC Autonomous,<br>
+                (Affliated to JNTUA , Ananthapuramu & approved by AICTE , New Delhi)<br>www.mits.ac.in
+            </div>
+        </div>
+    </div><hr>
+     <div class="flex-child">
+        <span>ORIGINAL</span>HALL TICKET
+     </div>
+     <br>
+     <div class="box">
+        <div class="image photo">
+            <div style="width: 90px;height: 80px;padding-top: 10%;" class=" border text-center">paste <br>your<br> photo</div>
+            <!-- <img src="assets/img/customer_logo.jpg" alt="" width="90" height="90" class="d-inline-block align-text-top"> -->
+        </div>
+        <table class="table details">
+        <tr><td>H.T.No.</td><td>:</td><td>&nbsp;</td><td>{{details["rollno"]}}</td></tr>
+        <tr>
+            <td>Name of the Candidate</td><td>:</td>
+        <td>&nbsp;</td><td>{{details["name"] |uppercase}}</td></tr>
+        <tr>
+            <td>Program and Branch</td><td>:</td>
+        <td>&nbsp;</td><td>{{details["coursename"] |uppercase}} &nbsp;{{details["departmentname"] |uppercase}}</td></tr>
+        <tr>
+            <td>Center of the Examination</td><td>:</td>
+        <td>&nbsp;</td><td>MADANAPALLE INSTITUE OF TECHNOLOGY</td></tr>
+        <tr>
+            <td>Name of the Examination</td><td>:</td>
+        <td>&nbsp;</td><td>{{details["examname"] |uppercase}}</td></tr>
+        </table>
+     </div>
+<br><br>
+<table class="flex-child bor" >
+   <thead >
+       <tr>
+           <th>S.No</th>
+           <th>Course code and Course title</th>
+           <th>Invigilator Sign with Date</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr *ngFor="let c of subjectdetails;index as i">
+           <td>{{i+1}}</td>
+           <td>{{c["subjectname"]}} &nbsp; {{c["subjectcode"]}}</td>
+           <td></td>
+       </tr>
+   </tbody>
+</table>
+<br><br><br>
+Signature of Student
+</div> 
+</div>
+<div class="danger" *ngIf="!emptymode">
+    <h5>⚠  404..Page not found..Refresh page...</h5>
+</div>
+
+
